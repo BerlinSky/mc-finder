@@ -1,23 +1,9 @@
  {
- 	// 103 - Use data to populate client table
+ 	// 102 - Use data for the table header
  }
 
 var headerData = [
 	"Name", "State", "City", "Telephone", "Balance"
-];
-
-var clientData = [
-	["Ann Alexander", "CA", "Los Angelos", "509-222-2121", "50 million"],
-	["Bob Alexander", "NJ", "Jersey City", "409-222-2121", "10 million"],
-	["Cathy Alexander", "NY", "New York", "209-222-2121", "80 million"],
-	["Kevin Alexander", "GA", "Atlanda", "109-222-2121", "70 million"],
-	["Larry Alexander", "TX", "Dallas", "709-222-2121", "60 million"],
-	["Mary Alexander", "NH", "Hew Heaven", "609-222-2121", "250 million"],
-	["Nancy Alexander", "MA", "Boston", "809-222-2121", "750 million"],
-	["Oscar Alexander", "LA", "New Orleans", "449-222-2121", "850 million"],
-	["Peter Alexander", "FL", "Miami", "339-222-2121", "590 million"],
-	["Wendy Alexander", "NM", "El Paso", "229-222-2121", "450 million"],
-	["Zach Alexander", "CO", "Denvor", "789-222-2121", "50 million"]
 ];
 
 var logMixin = {
@@ -91,7 +77,7 @@ var McFinder = React.createClass({
 			 <br/>
 			 <div><button onClick={ this._incrementSearchCount }>Increment Search Count</button></div>
 			 <br/>
-			 <ClientTable headerData={ this.props.headerData } clientData={ this.props.clientData } />
+			 <ClientTable headerData={ this.props.headerData } />
 			</div>
 		)
 	}
@@ -101,8 +87,8 @@ var ClientTable = React.createClass ({
 	render: function() {
 		return (
 			<table>
-				<ClientTHeader headerData={ this.props.headerData } />
-				<ClientTBody clientData={ this.props.clientData } />
+				<ClientTHeader headerData={ this.props.headerData }/>
+				<ClientTBody />
 			</table>
 		)
 	}
@@ -128,32 +114,41 @@ var ClientTBody = React.createClass ({
 	render: function() {
 		return (
 			<tbody>
-			{
-				this.props.clientData.map(function(row, idx) {
-					return(<ClientTRow key={ idx } clientRowData={ row } />)
-				})
-			}
+				<tr>
+					<td>Book</td>
+					<td>Author</td>
+					<td>Language</td>
+					<td>Published</td>
+					<td>Sales</td>
+				</tr>
+				<tr>
+					<td>Book</td>
+					<td>Author</td>
+					<td>Language</td>
+					<td>Published</td>
+					<td>Sales</td>
+				</tr>
+				<tr>
+					<td>Book</td>
+					<td>Author</td>
+					<td>Language</td>
+					<td>Published</td>
+					<td>Sales</td>
+				</tr>
+				<tr>
+					<td>Book</td>
+					<td>Author</td>
+					<td>Language</td>
+					<td>Published</td>
+					<td>Sales</td>
+				</tr>
 			</tbody>
 		)
 	}
 });
 
-var ClientTRow = React.createClass ({
-	render: function() {
-		return (
-			<tr>
-			{
-				this.props.clientRowData.map(function(rowData, idx) {
-					return(<td key={ idx }>{ rowData }</td>)
-				})
-			}
-			</tr>
-		)
-	}
-});
-
 ReactDOM.render(
-  <McFinder headerData={ headerData } clientData={ clientData }isInstitution={ false } />, 
+  <McFinder headerData={ headerData } isInstitution={ false } />, 
   document.getElementById('app')
 );
 
