@@ -1,0 +1,17 @@
+/*_base*/
+html, body {
+	background-color: #FFF8C6;
+}
+
+table {
+	border: solid 1px;
+	padding: 0;
+}
+
+thead > tr > td {
+	border: solid 1px;
+	margin: 0;
+	padding: 10px 5px 10px 5px;
+	text-align: center;
+}
+
