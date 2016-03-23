@@ -22,4 +22,20 @@ The purpose of the Mini Client Finder to hightlight the ReactJS foundational kno
 ### Mixins:
 
 
+### Working Files (HTML)
+
+- 101-index.html: Initial project setup
+- 102-index.html: Use the default properties
+- 103-index.html: Define a required property
+- 104-index.html: Show parent child relationship
+- 105-index.html: Set up initial state
+- 106-index.html: Set state on componentDidMount
+- 107-index.html: Utilize user-defined functions
+- 108-index.html: Log the life cycle events
+- 109-index.html: Use the Mixin
+- 110-index.html: Move the JSX codes to JS files
+
+
+
+
 
