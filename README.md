@@ -21,6 +21,7 @@ The purpose of the Mini Client Finder to hightlight the ReactJS foundational kno
 
 ### Mixins:
 
+"Components are the best way to reuse code in React, but sometimes very different components may share some common functionality. These are sometimes called cross-cutting concerns. React provides mixins to solve this problem."
 
 ### Working Files (HTML)
 

@@ -1,5 +1,6 @@
  {
- 	// 105 - 
+ 	// 104 - Sort data on the client table
+ 	// Invoke the sort event on the table header
  }
 
 
@@ -48,6 +49,13 @@ var McFinder = React.createClass({
 
 	render: function() {
 		var client = "Nathan Nolan"
+
+		// Conditionals
+		if (this.props.isInstitution) {
+			client = (
+			 <Client name={ this.props.name }/>	
+			)
+		}
 
 		return (
 			<div>
