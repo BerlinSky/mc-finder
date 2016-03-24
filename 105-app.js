@@ -1,5 +1,5 @@
  {
- 	// 106 - Add sorting direction arrows
+ 	// 105 - Add sorting direction
  }
 
 
@@ -68,23 +68,16 @@ var ClientTable = React.createClass ({
 	},
 
 	_sortColumn: function(e) {
-		console.info("sortColumn");
-
+		
 		var col = e.target.cellIndex;
 		var dataCopy = this.state.tableData.slice();
 		var sortDesc = (this.state.sortCol === col && !this.state.sortDesc);
 
-		console.info("col", col);
-
 		dataCopy.sort(function(a, b){
-			console.info("a[col] : b[col]", a[col] + " : " + b[col]);
-
 			return sortDesc
 				? a[col] < b[col]
 				: a[col] > b[col];
 		});
-
-		console.info("dataCopy after sorting", dataCopy);
 
 		this.setState({
 			tableData: dataCopy,
@@ -101,11 +94,8 @@ var ClientTable = React.createClass ({
 						<tr>
 							{
 								this.props.headerData.map(function(title, idx) {
-									if (this.state.sortCol === idx) {
-										title += this.state.sortDesc ? ' \u2191' : '\u2193'
-									}
 									return(<td key={ idx }>{ title }</td>)
-								}.bind(this))
+								})
 							}
 						</tr>
 					</thead>
