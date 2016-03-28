@@ -18,7 +18,7 @@ var ClientTHead = React.createClass ({
 						if (this.props.sortCol === idx) {
 							title += this.props.sortDesc ? ' \u2191' : '\u2193'
 						}
-						return(<td key={ idx } data-index={ idx }>{ title }</td>)
+						return(<th key={ idx } data-index={ idx }>{ title }</th>)
 					}.bind(this))
 				}
 				</tr>
