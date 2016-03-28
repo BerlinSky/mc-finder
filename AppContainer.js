@@ -15,7 +15,7 @@ var AppContainer = React.createClass ({
 
 	getInitialState: function() {
     return {
-    	tableData: this.props.clientData,
+    	clientData: this.props.clientData,
 			searchState: false,
 			preSearchData: null
     };
@@ -24,13 +24,13 @@ var AppContainer = React.createClass ({
 	_toggleSearch: function() {
 		if(this.state.searchState) {
 			this.setState({
-				data: this.preSearchData,
+				clientData: this.preSearchData,
 				searchState: false
 			});
 			this.preSearchData = null;
 		}
 		else {
-			this.preSearchData = this.state.tableData,
+			this.preSearchData = this.state.clientData,
 			this.setState({
 				searchState: true
 			});
@@ -45,7 +45,7 @@ var AppContainer = React.createClass ({
 				<AppHeader toggleSearch={ this._toggleSearch } />
 				<AppMain 
 					headerData={ this.props.headerData } 
-				 	clientData={ this.props.clientData } 
+				 	clientData={ this.state.clientData } 
 				 	searchState={ this.state.searchState }
 			 	/>
 				<AppFooter />

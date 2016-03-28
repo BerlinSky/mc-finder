@@ -11,7 +11,7 @@ var ClientTBody = React.createClass ({
 	render: function() {
 		return (
 			<tbody onDoubleClick={ this.props.displayEditor }>
-					<tr className={ this.classNameText }>
+					<tr className={ this.classNameText } onChange={ this.props.searchClientData }>
 						{
 							this.props.headerData.map(function(_ignore, idx) {
 								var searchState = this.props.searchState;
@@ -19,7 +19,10 @@ var ClientTBody = React.createClass ({
 
 								return(
 									<td key={ idx }>
-										<input type='text' className={ searchText } key={ idx } defaultValue={ searchText }/>
+										<input type='text' className={ searchText } 
+											data-index={ idx }
+											key={ idx } defaultValue={ searchText }
+										/>
 									</td>)
 							}.bind(this))
 						}
@@ -35,7 +38,7 @@ var ClientTBody = React.createClass ({
 									row.map(function(cellData, cellIndex) {
 										var displayData = cellData;
 
-										if (editState && editState.row == rowIndex && editState.cell == cellIndex) {
+										if (editState && editState.row === rowIndex && editState.cell === cellIndex) {
 											displayData = (
 												<form onSubmit={ this.props.saveChange }>
 													<input type='text' defaultValue={ displayData } />

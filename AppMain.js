@@ -5,6 +5,7 @@ var AppMain = React.createClass ({
 		return (
 			<div className='app-main'>
 				<ClientTable 
+					searchClientData={ this.props.searchClientData } 
 					headerData={ this.props.headerData } 
 				 	clientData={ this.props.clientData } 
 				 	searchState={ this.props.searchState }

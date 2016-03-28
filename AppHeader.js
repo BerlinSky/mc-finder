@@ -5,7 +5,7 @@ var AppHeader = React.createClass ({
 		return (
 			<div className='app-header'>
 				<h2>Mini Client Finder:</h2>
-				<SearchButton toggleSearch={ this.props.toggleSearch  }/>
+				<SearchButton toggleSearch={ this.props.toggleSearch }/>
 			</div>
 		)
 	}

@@ -6,9 +6,8 @@ var ClientTable = React.createClass ({
     	tableData: this.props.clientData,
     	sortCol: null,
 			sortDesc: false,
-			editState: null
-			// searchState: false,
-			// preSearchData: null
+			editState: null,
+			preSearchData: this.props.clientData.slice()
     };
 	},
 
@@ -32,8 +31,6 @@ var ClientTable = React.createClass ({
 
 	_displayEditor: function(e) {
 
-		console.info('_displayEditor');
-
 		this.setState( {
 			editState: {
 				row: parseInt(e.target.dataset.row, 10),
@@ -56,6 +53,27 @@ var ClientTable = React.createClass ({
 		});
 	},
 
+	_searchClientData: function(e) {
+		var searchData = this.state.tableData.slice();
+		var searchValue = e.target.value.toLowerCase();
+
+		if(!searchValue) {
+			this.setState({
+				tableData: this.state.preSearchData
+			});
+			return;
+		}
+		var index = e.target.dataset.index;
+
+		var filtered = searchData.filter(function(row) {
+			return row[index].toString().toLowerCase().indexOf(searchValue) > -1;
+		});
+
+		this.setState({
+			tableData: filtered
+		});
+	},
+
 	render: function() {
 		return (
 			<table>
@@ -68,6 +86,7 @@ var ClientTable = React.createClass ({
 				<ClientTBody
 					displayEditor={ this._displayEditor }
 					saveChange={ this._saveChange }
+					searchClientData={ this._searchClientData } 
 					editState={ this.state.editState }
 					headerData={ this.props.headerData } 
 					clientData={ this.state.tableData } 
