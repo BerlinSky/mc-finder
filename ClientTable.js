@@ -67,6 +67,7 @@ var ClientTable = React.createClass ({
 				/>
 				<ClientTBody
 					displayEditor={ this._displayEditor }
+					saveChange={ this._saveChange }
 					editState={ this.state.editState }
 					headerData={ this.props.headerData } 
 					clientData={ this.state.tableData } 

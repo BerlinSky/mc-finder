@@ -37,7 +37,7 @@ var ClientTBody = React.createClass ({
 
 										if (editState && editState.row == rowIndex && editState.cell == cellIndex) {
 											displayData = (
-												<form onSubmit={ this._saveChange }>
+												<form onSubmit={ this.props.saveChange }>
 													<input type='text' defaultValue={ displayData } />
 												</form>
 											);
