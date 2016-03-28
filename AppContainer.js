@@ -37,10 +37,21 @@ var AppContainer = React.createClass ({
 		}
 	},
 
+	_exportJson: function(e) {
+		var content = JSON.stringify(this.state.clientData);
+		var url = window.URL || window.webkitURL;
+		var blob = new Blob([content], { type: 'text/json' });
+		e.target.href = url.createObjectURL(blob);
+		e.target.download = 'table-data.json';
+	},
+
 	render: function() {
 		return (
 			<div>
-				<AppHeader toggleSearch={ this._toggleSearch } />
+				<AppHeader 
+					toggleSearch={ this._toggleSearch } 
+					exportJson={ this._exportJson } 
+				/>
 				<AppMain 
 					headerData={ this.props.headerData } 
 				 	clientData={ this.state.clientData } 

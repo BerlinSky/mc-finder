@@ -1,7 +1,7 @@
 'use strict';
 
 {
- 	// 111 - Export data from client table
+ 	// 111 - Export table data to a JSON file
  }
 
 var App = React.createClass ({

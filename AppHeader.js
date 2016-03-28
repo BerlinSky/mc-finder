@@ -6,7 +6,17 @@ var AppHeader = React.createClass ({
 			<div className='app-header'>
 				<h2>Mini Client Finder:</h2>
 				<SearchButton toggleSearch={ this.props.toggleSearch }/>
+				<ExportJsonButton exportJson={ this.props.exportJson }/>
 			</div>
+		)
+	}
+});
+
+var ExportJsonButton = React.createClass ({
+	render: function() {
+		return (
+			<a href='table-data.json'
+			onClick={ this.props.exportJson }>Export (JSON)</a>
 		)
 	}
 });
