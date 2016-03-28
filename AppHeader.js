@@ -7,7 +7,17 @@ var AppHeader = React.createClass ({
 				<h2>Mini Client Finder:</h2>
 				<SearchButton toggleSearch={ this.props.toggleSearch }/>
 				<ExportJsonButton exportJson={ this.props.exportJson }/>
+				<ExportCsvButton exportCsv={ this.props.exportCsv }/>
 			</div>
+		)
+	}
+});
+
+var ExportCsvButton = React.createClass ({
+	render: function() {
+		return (
+			<a href='table-data.csv'
+			onClick={ this.props.exportCsv }>Export (CSV)</a>
 		)
 	}
 });

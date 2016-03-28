@@ -1,7 +1,7 @@
 'use strict';
 
 {
- 	// 112 - Export table data to a CSV file
+ 	// 111 - Export table data to a JSON file
  }
 
 var App = React.createClass ({

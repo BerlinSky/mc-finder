@@ -45,12 +45,33 @@ var AppContainer = React.createClass ({
 		e.target.download = 'table-data.json';
 	},
 
+	_exportCsv: function(e) {
+		var content = this.state.clientData.reduce(function(previous, current) {
+			var cc = current.reduce(function(p, c, index) {
+				return p 
+					+ '"'
+					+ c.replace(/"/g, '""')
+					+ '"'
+					+ (index < current.length-1 ? ',' : '');
+				}, '') + "\n";
+
+			return previous + cc;
+		}, '');
+
+		var url = window.URL || window.webkitURL;
+		var blob = new Blob([content], { type: 'text/csv' });
+
+		e.target.href = url.createObjectURL(blob);
+		e.target.download = 'table-data.csv';
+	},
+
 	render: function() {
 		return (
 			<div>
 				<AppHeader 
 					toggleSearch={ this._toggleSearch } 
 					exportJson={ this._exportJson } 
+					exportCsv={ this._exportCsv } 
 				/>
 				<AppMain 
 					headerData={ this.props.headerData } 
