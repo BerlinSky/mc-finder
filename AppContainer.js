@@ -35,8 +35,6 @@ var AppContainer = React.createClass ({
 				searchState: true
 			});
 		}
-
-		console.info('_toggleSearch');
 	},
 
 	render: function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 {
- 	// 111 - ???
+ 	// 109 - Reorganize the components
  }
 
 var App = React.createClass ({
