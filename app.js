@@ -1,5 +1,9 @@
 'use strict';
 
+{
+ 	// 109 - Reorganize the components
+ }
+
 var App = React.createClass ({
 	render: function() {
 		return (

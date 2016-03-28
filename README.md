@@ -38,12 +38,14 @@ The purpose of the Mini Client Finder to hightlight the ReactJS foundational kno
 
 ### Working Files (JS/JSX)
 
-- 101-app.js:
-- 102-app.js:
-- 103-app.js:
-- 104-app.js:
-- 105-app.js:
-- 105-app.js:
+- 101-app.js: Create Clien Table componet shell
+- 102-app.js: Use local data to populate the table header
+- 103-app.js: Use local data to pupulate the table data table
+- 104-app.js: Sort the client table data by click on the column header
+- 105-app.js: Add sorting direction
+- 106-app.js: Add sorting direction arrow(s)
+- 107-app.js: Display an in-cell editor
+- 108-app.js: Save the in-cell editing value
 
 ### ReactJS Components
 

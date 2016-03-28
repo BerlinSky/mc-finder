@@ -15,8 +15,8 @@ var ClientTHead = React.createClass ({
 				<tr>
 				{
 					this.props.headerData.map(function(title, idx) {
-						if (this.state.sortCol === idx) {
-							title += this.state.sortDesc ? ' \u2191' : '\u2193'
+						if (this.props.sortCol === idx) {
+							title += this.props.sortDesc ? ' \u2191' : '\u2193'
 						}
 						return(<td key={ idx } data-index={ idx }>{ title }</td>)
 					}.bind(this))
