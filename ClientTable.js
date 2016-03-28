@@ -31,6 +31,9 @@ var ClientTable = React.createClass ({
 	},
 
 	_displayEditor: function(e) {
+
+		console.info('_displayEditor');
+
 		this.setState( {
 			editState: {
 				row: parseInt(e.target.dataset.row, 10),
@@ -63,6 +66,8 @@ var ClientTable = React.createClass ({
 					sortDesc={ this.state.sortDesc }
 				/>
 				<ClientTBody
+					displayEditor={ this._displayEditor }
+					editState={ this.state.editState }
 					headerData={ this.props.headerData } 
 					clientData={ this.state.tableData } 
 				/>

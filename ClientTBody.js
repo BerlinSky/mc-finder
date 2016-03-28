@@ -10,7 +10,7 @@ var ClientTBody = React.createClass ({
 
 	render: function() {
 		return (
-			<tbody onDoubleClick={ this._displayEditor }>
+			<tbody onDoubleClick={ this.props.displayEditor }>
 					<tr className={ this.classNameText }>
 						{
 							this.props.headerData.map(function(_ignore, idx) {
@@ -27,7 +27,7 @@ var ClientTBody = React.createClass ({
 
 					{
 						this.props.clientData.map(function(row, rowIndex) {
-							var editState = this.state.editState;
+							var editState = this.props.editState;
 
 							return(
 								<tr key={ rowIndex }>
