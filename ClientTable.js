@@ -13,23 +13,15 @@ var ClientTable = React.createClass ({
 	},
 
 	_sortColumn: function(e) {
-		console.info("sortColumn");
-
 		var col = e.target.cellIndex;
 		var dataCopy = this.state.tableData.slice();
 		var sortDesc = (this.state.sortCol === col && !this.state.sortDesc);
 
-		console.info("col", col);
-
 		dataCopy.sort(function(a, b){
-			console.info("a[col] : b[col]", a[col] + " : " + b[col]);
-
 			return sortDesc
 				? a[col] < b[col]
 				: a[col] > b[col];
 		});
-
-		console.info("dataCopy after sorting", dataCopy);
 
 		this.setState({
 			tableData: dataCopy,
@@ -72,7 +64,7 @@ var ClientTable = React.createClass ({
 				/>
 				<ClientTBody
 					headerData={ this.props.headerData } 
-					clientData={ this.props.clientData } 
+					clientData={ this.state.tableData } 
 				/>
 			</table>
 		)

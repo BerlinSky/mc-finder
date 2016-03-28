@@ -36,6 +36,28 @@ The purpose of the Mini Client Finder to hightlight the ReactJS foundational kno
 - 109-index.html: Use the Mixin
 - 110-index.html: Move the JSX codes to JS files
 
+### Working Files (JS/JSX)
+
+- 101-app.js:
+- 102-app.js:
+- 103-app.js:
+- 104-app.js:
+- 105-app.js:
+- 105-app.js:
+
+### ReactJS Components
+
+````JS
+
++ AppContainer
+  |__ AppHeader
+  |__ AppMain
+  |   |__ClientTable
+  |      |__ ClientTHead
+  |      |__ ClientTBody
+  |__ AppFooter
+
+````
 
 
 
