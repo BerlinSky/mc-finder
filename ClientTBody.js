@@ -2,6 +2,12 @@
 
 var ClientTBody = React.createClass ({
 
+	getInitialState: function() {
+	  return {
+	  	tableData: this.props.clientData
+	  };
+	},
+
 	render: function() {
 		return (
 			<tbody onDoubleClick={ this._displayEditor }>
