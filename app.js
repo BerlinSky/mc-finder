@@ -1,104 +1,105 @@
 'use strict';
 
- // window.ReactRouter;
-
-// const { Router, Route, Link, browserHistory } = ReactRouter;
-
-var { Router, Route, IndexRoute, Link, browserHistory } = ReactRouter
-
-// var Router = require('react-router').Router
-// var Route = require('react-router').Route
-// var Link = require('react-router').Link
+const { Router, Route, IndexRoute, Link, browserHistory } = ReactRouter
 
 {
- 	// 113 - ???
- }
+	// 114 - ???
+}
+
+class MainLayout extends React.Component {
+	constructor() {
+		super();
+	}
+  render() {
+    return (
+      <div className="app">
+        <header className="primary-header"></header>
+        <aside className="primary-aside">
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/users">Users</Link></li>
+            <li><Link to="/widgets">Widgets</Link></li>
+          </ul>
+        </aside>
+        <main>
+          {this.props.children}
+        </main>
+      </div>
+      )
+  }
+}
+
+class SearchLayout extends React.Component {
+	constructor() {
+		super();
+	}
+  render() {
+    return (
+      <div className="search">
+        <header className="search-header"></header>
+        <div className="results">
+          {this.props.children}
+        </div>
+        <div className="search-footer pagination"></div>
+      </div>
+      )
+  }
+}
+
+class UserList extends React.Component {
+	constructor() {
+		super();
+	}
+  render() {
+    return (
+      <ul className="user-list">
+        <li>Dan</li>
+        <li>Ryan</li>
+        <li>Michael</li>
+      </ul>
+      )
+  }
+}
+
+class WidgetList extends React.Component {
+	constructor() {
+		super();
+	}
+  render() {
+    return (
+      <ul className="widget-list">
+        <li>Widget 1</li>
+        <li>Widget 2</li>
+        <li>Widget 3</li>
+      </ul>
+      )
+  }
+}
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.displayName = '';
-    }
-    render() {
-        return <h1>Home</h1>;
-    }
-}
-
-class About extends React.Component {
-    constructor(props) {
-        super(props);
-        this.displayName = '';
-    }
-    render() {
-        return <h1>About</h1>;
-    }
-}
-
-class Inbox extends React.Component {
-    constructor(props) {
-        super(props);
-        this.displayName = '';
-    }
-    render() {
-        return <h1>Inbox</h1>;
-    }
-}
-
-var App = React.createClass ({
-	render: function() {
+	render() {
 		return (
-
 			<AppContainer 
 				headerData={ headerData } 
 				clientData={ clientData } 
 			/>
 		)
 	}
-});
+};
 
 ReactDOM.render((
- <Router history={browserHistory}>
-	<Route path="/" component={App}>
-	 <IndexRoute component={Home} />
-	</Route>
-</Router>
+  <Router history={browserHistory}>
+    <Route path="/" component={MainLayout}>
+      <IndexRoute component={Home} />
+      <Route component={SearchLayout}>
+        <Route path="users" component={UserList} />
+        <Route path="widgets" component={WidgetList} />
+      </Route> 
+    </Route>
+  </Router>
 ), document.getElementById('app'))
 
-// const routes = {
-//   path: "\/",
-//   component: Home,
-//   indexRoute: { component: App },
-//   childRoutes: [
-//     { path: 'about', component: About },
-//     { path: 'inbox', component: Inbox },
-//   ]
-// };
 
 
-// ReactDOM.render(<App />, document.getElementById('app'));
 
-// ReactDOM.render(
-// 	(<Router history={browserHistory}>
-// 		<Route path="/" component={Home}>
-// 		 <IndexRoute component={Inbox} />
-// 		</Route>
-// 	</Router>), document.getElementById('app'));
-
-
-// var routes = {
-//   path: '\/',
-//   component: App
-// }
-
-// ReactDOM.render(<Router routes={routes} />, document.getElementById('app'));
-
-// ReactDOM.render(
-// 	(
-// 		<Router history={browserHistory}>
-// 			<Route path="/" component={App}>
-// 			</Route>
-// 		</Router>
-// 	),
-//   document.getElementById('app')
-// );
 
